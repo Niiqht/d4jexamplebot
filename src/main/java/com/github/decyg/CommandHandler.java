@@ -1,5 +1,6 @@
 package com.github.decyg;
 
+import java.util.Random;
 import com.github.decyg.lavaplayer.GuildMusicManager;
 import com.github.decyg.lavaplayer.TrackScheduler;
 import com.sedmelluq.discord.lavaplayer.player.AudioLoadResultHandler;
@@ -121,6 +122,49 @@ public class CommandHandler {
             RequestBuffer.request(() -> event.getChannel().sendMessage(builder.build()));
 
         });
+        
+        
+        
+        commandMap.put("hi", (event, args) -> {
+        	
+                BotUtils.sendMessage(event.getChannel(), "Hello!");
+                return;
+
+        });
+        
+        commandMap.put("ask", (event, args) -> {
+        	
+//            BotUtils.sendMessage(event.getChannel(), "Hello!");
+//            return;
+        	Random rand = new Random();
+
+        	int  n = rand.nextInt(4);
+        	if (n==1)
+        	{
+        		BotUtils.sendMessage(event.getChannel(), "Yes.");
+        	}
+        	if (n==2)
+        	{
+        		BotUtils.sendMessage(event.getChannel(), "No.");
+        	}
+        	if (n==3)
+        	{
+        		BotUtils.sendMessage(event.getChannel(), "I'm not sure.");
+        	}
+        	if (n==4)
+        	{
+        		BotUtils.sendMessage(event.getChannel(), "lol you wish");
+        	}
+        	if (n==5)
+        	{
+        		BotUtils.sendMessage(event.getChannel(), "Almost");
+        	}
+        	
+        	
+        		
+
+    });
+      
 
     }
 
