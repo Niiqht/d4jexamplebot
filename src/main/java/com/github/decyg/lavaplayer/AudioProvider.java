@@ -32,11 +32,11 @@ public class AudioProvider implements IAudioProvider {
 
   @Override
   public byte[] provide() {
-    if (lastFrame == null) {
-      lastFrame = audioPlayer.provide();
+    if (this.lastFrame == null) {
+      this.lastFrame = this.audioPlayer.provide();
     }
 
-    byte[] data = lastFrame != null ? lastFrame.data : null;
+    byte[] data = this.lastFrame != null ? this.lastFrame.data : null;
     lastFrame = null;
 
     return data;
